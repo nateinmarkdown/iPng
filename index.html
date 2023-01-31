@@ -10,20 +10,28 @@
 <body>
   <div class="container my-5">
     <h1 class="text-center">Image Converter</h1>
-    <form>
+    <form action="convert.php" method="post" enctype="multipart/form-data">
       <div class="form-group">
         <label for="from-format">Convert from:</label>
-        <select class="form-control" id="from-format">
-          <option>JPG</option>
-          <option>PNG</option>
+        <select class="form-control" id="from-format" name="from-format">
+          <option value="jpg">JPG</option>
+          <option value="png">PNG</option>
+          <option value="gif">GIF</option>
+          <option value="bmp">BMP</option>
         </select>
       </div>
       <div class="form-group">
         <label for="to-format">Convert to:</label>
-        <select class="form-control" id="to-format">
-          <option>JPG</option>
-          <option>PNG</option>
+        <select class="form-control" id="to-format" name="to-format">
+          <option value="jpg">JPG</option>
+          <option value="png">PNG</option>
+          <option value="gif">GIF</option>
+          <option value="bmp">BMP</option>
         </select>
+      </div>
+      <div class="form-group">
+        <label for="file">Upload file:</label>
+        <input type="file" class="form-control-file" id="file" name="file">
       </div>
       <button type="submit" class="btn btn-primary btn-block">Start converting</button>
     </form>

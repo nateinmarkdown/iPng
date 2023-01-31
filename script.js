@@ -19,7 +19,8 @@ $(document).ready(function() {
         let data = canvas.toDataURL("image/" + toFormat);
         let a = document.createElement("a");
         a.href = data;
-        a.download = file.name.split(".")[0] + "." + toFormat;
+        let originalFileName = file.name.split(".")[0];
+        a.download = originalFileName + "." + toFormat;
         a.click();
       };
     };

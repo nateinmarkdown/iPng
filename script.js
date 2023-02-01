@@ -20,7 +20,12 @@ $(document).ready(function() {
         let a = document.createElement("a");
         a.href = data;
         let originalFileName = file.name.split(".")[0];
-        a.download = originalFileName + "." + toFormat;
+        let originalFileExtension = file.name.split(".")[1];
+        if (originalFileExtension === fromFormat) {
+          a.download = originalFileName + "." + toFormat;
+        } else {
+          a.download = file.name.replace("." + originalFileExtension, "." + toFormat);
+        }
         a.click();
       };
     };

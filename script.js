@@ -19,13 +19,7 @@ $(document).ready(function() {
         let data = canvas.toDataURL("image/" + toFormat);
         let a = document.createElement("a");
         a.href = data;
-        let originalFileName = file.name.split(".")[0];
-        let originalFileExtension = file.name.split(".")[1];
-        if (originalFileExtension.toLowerCase() === fromFormat.toLowerCase()) {
-          a.download = originalFileName + "." + toFormat;
-        } else {
-          a.download = file.name.replace("." + originalFileExtension, "." + toFormat);
-        }
+        a.download = "converted_image." + toFormat;
         a.click();
       };
     };

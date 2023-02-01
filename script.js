@@ -21,7 +21,7 @@ $(document).ready(function() {
         a.href = data;
         let originalFileName = file.name.split(".")[0];
         let originalFileExtension = file.name.split(".")[1];
-        if (originalFileExtension === fromFormat) {
+        if (originalFileExtension.toLowerCase() === fromFormat.toLowerCase()) {
           a.download = originalFileName + "." + toFormat;
         } else {
           a.download = file.name.replace("." + originalFileExtension, "." + toFormat);

@@ -1,7 +1,6 @@
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
-    let fromFormat = $("#from-format").val();
     let toFormat = $("#to-format").val();
     let file = $("#file")[0].files[0];
 
@@ -19,7 +18,7 @@ $(document).ready(function() {
         let data = canvas.toDataURL("image/" + toFormat);
         let a = document.createElement("a");
         a.href = data;
-        a.download = "converted_image." + toFormat;
+        a.download = "download." + toFormat;
         a.click();
       };
     };
